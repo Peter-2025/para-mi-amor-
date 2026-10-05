@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Flores Amarillas Para Ti 🌻❤️</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for Ambient Floating Sparkles -->
+    <canvas id="ambientCanvas"></canvas>
+
+    <!-- Main Card Container -->
+    <main class="card-container" id="mainContainer">
+        <!-- Floating audio control -->
+        <button id="musicBtn" class="music-btn hidden" aria-label="Control de música" title="Música">
+            <span class="music-icon">🎵</span>
+            <span class="music-wave">
+                <span></span><span></span><span></span>
+            </span>
+        </button>
+
+        <!-- Config / Customize Button -->
+        <button id="configBtn" class="config-btn hidden" aria-label="Personalizar mensaje" title="Personalizar">
+            ⚙️
+        </button>
+
+        <!-- Initial Screen / Gift Invitation (Frame 00:00 - 00:01 in video) -->
+        <section id="introOverlay" class="intro-overlay">
+            <!-- WhatsApp-style preview pill -->
+            <div class="whatsapp-card" id="whatsappCard">
+                <div class="wa-header">
+                    <span class="wa-avatar">❤️</span>
+                    <div class="wa-info">
+                        <span class="wa-sender">Amor de mi vida</span>
+                        <span class="wa-status">En línea</span>
+                    </div>
+                </div>
+                <div class="wa-bubble">
+                    <div class="wa-file-icon">📄</div>
+                    <div class="wa-file-details">
+                        <span class="wa-filename">Flores para ti 💐❤️.html</span>
+                        <span class="wa-file-size">HTML • 2 kB</span>
+                    </div>
+                    <div class="wa-meta">
+                        <span class="wa-time">10:00 PM</span>
+                        <span class="wa-checks">✓✓</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sunflower Click Button -->
+            <div class="open-gift-btn" id="openGiftBtn" role="button" tabindex="0">
+                <div class="sunflower-icon">
+                    <svg viewBox="0 0 100 100" class="sunflower-svg">
+                        <defs>
+                            <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#361a05" />
+                                <stop offset="70%" stop-color="#552c0a" />
+                                <stop offset="100%" stop-color="#7c4210" />
+                            </radialGradient>
+                            <linearGradient id="petalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ffd000" />
+                                <stop offset="100%" stop-color="#ff9900" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Petals -->
+                        <g transform="translate(50, 50)">
+                            <g class="petals-group">
+                                <!-- 16 Petals rotated -->
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(0)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(22.5)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(45)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(67.5)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(90)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(112.5)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(135)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(157.5)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(180)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(202.5)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(225)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(247.5)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(270)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(292.5)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(315)" />
+                                <ellipse cx="0" cy="-33" rx="7.5" ry="16" fill="url(#petalGrad)" transform="rotate(337.5)" />
+                            </g>
+                            <!-- Center Seed Head -->
+                            <circle cx="0" cy="0" r="18" fill="url(#centerGrad)" />
+                            <circle cx="0" cy="0" r="12" fill="#2d1604" opacity="0.6" />
+                        </g>
+                    </svg>
+                </div>
+                <span class="btn-text">Flores Para Ti</span>
+                <span class="click-hint">Toca para abrir 💛</span>
+            </div>
+        </section>
+
+        <!-- Main Animation Scene -->
+        <section id="scene" class="scene">
+            <!-- Left Side: Romantic Letter & Live Counter -->
+            <div id="letterWrapper" class="letter-wrapper">
+                <article class="letter-content">
+                    <h1 id="letterTitle" class="letter-title"></h1>
+                    <div id="letterBody" class="letter-body"></div>
+                    <div id="letterSignature" class="letter-signature"></div>
+                </article>
+
+                <div id="counterCard" class="counter-card hidden">
+                    <p class="counter-label" id="counterLabel">Mi amor por ti comenzó hace...</p>
+                    <div class="counter-timer" id="counterTimer">
+                        <span class="time-item"><strong id="daysNum">0</strong> <small>días</small></span>
+                        <span class="time-item"><strong id="hoursNum">00</strong> <small>horas</small></span>
+                        <span class="time-item"><strong id="minutesNum">00</strong> <small>minutos</small></span>
+                        <span class="time-item"><strong id="secondsNum">00</strong> <small>segundos</small></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side / Tree Canvas -->
+            <div class="tree-canvas-container" id="treeCanvasContainer">
+                <canvas id="treeCanvas"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <!-- Customization Modal -->
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal-box">
+            <h3>Personalizar Dedicatoria 🌻</h3>
+            <label for="cfgTitle">Título:</label>
+            <input type="text" id="cfgTitle" value="Flores Amarillas para el amor de mi vida:">
+
+            <label for="cfgBody">Mensaje:</label>
+            <textarea id="cfgBody" rows="4">Si pudiera elegir un lugar seguro, sería a tu lado.
+
+Cuanto más tiempo estoy contigo más te amo.</textarea>
+
+            <label for="cfgSign">Firma:</label>
+            <input type="text" id="cfgSign" value="— I Love You ❤️">
+
+            <label for="cfgDate">Fecha de inicio del contador:</label>
+            <input type="date" id="cfgDate">
+
+            <div class="modal-actions">
+                <button id="saveCfgBtn" class="primary-btn">Guardar y Reiniciar</button>
+                <button id="closeCfgBtn" class="secondary-btn">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" preload="auto" loop src="music.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
